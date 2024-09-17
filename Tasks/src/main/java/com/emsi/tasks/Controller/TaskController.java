@@ -19,12 +19,12 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @PostMapping
+    @PostMapping("/create-task")
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         return ResponseEntity.ok(taskService.createTask(task));
     }
 
-    @GetMapping
+    @GetMapping("/get-all-tasks")
     public List<Task> getAllTasks() {
         return taskService.getAllTasks();
     }
